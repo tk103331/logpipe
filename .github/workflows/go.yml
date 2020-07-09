@@ -22,13 +22,15 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: Build
-      run: |
-        go build -v . -o ./dist
-        cp -r conf ./dist
-
     - name: Test
       run: go test -v .
+
+    - name: Build
+      run: |
+        go build -o ./dist/logpipe -v . 
+        cp -r conf ./dist
+
+
   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
