@@ -1,2 +1,2 @@
 # logpipe
-A log processing engine.
+A simple log processing engine.
